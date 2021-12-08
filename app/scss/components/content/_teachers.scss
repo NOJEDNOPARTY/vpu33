@@ -1,0 +1,70 @@
+.teachers {
+    &-list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        @media (max-width: 560px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &-item {
+        display: block;
+        width: calc((100% / 4) - 25px);
+        margin-bottom: 29px;
+        @media (max-width: 1100px) {
+            width: calc((100% / 3) - 15px);
+            max-width: 262px;
+        }
+        @media (max-width: 992px) {
+            width: calc((100% / 2) - 15px);
+            max-width: 262px;
+        }
+        @media (max-width: 560px) {
+            width: 100%;
+            max-width: 262px;
+        }
+        &-img {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 310px;
+            min-height: 310px;
+            max-height: 310px;
+            margin-bottom: 17px;
+            overflow: hidden;
+            @media (max-width: 1100px) {
+                margin-bottom: 15px;
+            }
+            & img {
+                min-height: 310px;
+                max-height: 310px;
+            }
+        }
+        &-name {
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Montserrat Bold';
+            font-size: 18px;
+            line-height: 27px;
+            text-transform: uppercase;
+            color: #333;
+            @media (max-width: 1100px) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            
+        }
+        &-place {
+            display: block;
+            font-family: 'Montserrat SemiBold';
+            font-size: 14px;
+            line-height: 25px;
+            text-transform: uppercase;
+            color: #333;
+        }
+    }
+}

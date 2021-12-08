@@ -1,0 +1,191 @@
+.test {
+    &-row {
+        padding: 36px 34px 21px;
+        background-color: #F6F6F6;
+        margin-bottom: 18px;
+        @media (max-width: 992px) {
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            padding: 20px;
+        }
+        & h3 {
+            margin-bottom: 16px;
+            font-family: 'Montserrat Bold';
+            font-size: 18px;
+            line-height: 25px;
+            color: #333333;
+            @media (max-width: 992px) {
+                font-size: 16px;
+                line-height: 23px;
+            }
+        }
+        & p {
+            margin-bottom: 20px;
+            font-family: 'Montserrat SemiBold';
+            font-size: 14px;
+            line-height: 25px;
+            text-transform: uppercase;
+            color: #333333;
+        }
+        &-radio {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            width: 100%;
+            max-width: 557px;
+            @media (max-width: 992px) {
+                display: block;
+                width: 100%;
+            }
+            & .radio {
+                width: calc(50% - 5px);
+                @media (max-width: 992px) {
+                    width: 100%;
+                }
+            }
+        }
+        &-img {
+            width: 100%;
+            max-width: 376px;
+            margin-bottom: 20px;
+        }
+        & .checkbox {
+            margin-bottom: 14px;
+        }
+        &-v {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 46px;
+            @media (max-width: 992px) {
+                display: block;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            &-left {
+                @media (max-width: 992px) {
+                    margin-bottom: 30px;
+                }
+                & p {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-bottom: 8px;
+                    font-family: 'Montserrat Regular';
+                    font-size: 18px;
+                    line-height: 30px;
+                    text-transform: unset;
+                    color: #333333;
+                    @media (max-width: 992px) {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                    & span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 29px;
+                        height: 29px;
+                        min-width: 29px;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                        background-color: $green;
+                        font-family: 'Montserrat Bold';
+                        font-size: 18px;
+                        line-height: 18px;
+                        text-align: center;
+                        color: #FFFFFF;
+                        @media (max-width: 992px) {
+                            font-size: 14px;
+                            line-height: 14px;
+                        }
+                    }
+                }
+            }
+            &-right {
+                & p {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-bottom: 8px;
+                    font-family: 'Montserrat Regular';
+                    font-size: 18px;
+                    line-height: 30px;
+                    text-transform: unset;
+                    color: #333333;
+                    @media (max-width: 992px) {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                    & span {
+                        display: inline-block;
+                        min-width: 15px;
+                        font-family: 'Montserrat Bold';
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+        &-check {
+            &-row {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin-bottom:9px;
+                &-1 {
+                    padding-left: 40px;
+                    & div {
+                        font-family: 'Montserrat Bold';
+                        font-size: 18px;
+                        line-height: 18px;
+                        color: #333333;
+                        @media (max-width: 992px) {
+                            font-size: 16px;
+                            line-height: 16px;
+                        }
+                    }
+                }
+                & div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 24px;
+                    min-width: 24px;
+                    height: 24px;
+                    font-family: 'Montserrat Bold';
+                    font-size: 18px;
+                    line-height: 18px;
+                    color: #333333;
+                    &:not(:last-child) {margin-right: 13px;}
+                    & .checkbox-icon {margin-right: 0;}
+                    & .checkbox {margin-bottom: 0 !important;}
+                }
+                &-num {
+                    width: 29px !important ;
+                    min-width: 29px !important;
+                    height: 29px !important;
+                    margin-right: 11px;
+                    background-color: $green;
+                    border-radius: 50%;
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+    &-form {
+        width: 100%;
+        max-width: 773px;
+        padding-top: 36px;
+        & h3 {
+            margin-bottom: 25px;
+            font-family: 'Montserrat Bold';
+            font-size: 18px;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: #333333;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.links-section {
+    background-color: #F6F6F6;
+    & .wrapper {
+        @media (max-width: 992px) {
+            padding: 0;
+        }
+    }
+    &-head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0 7px;
+        min-height: 82px;
+        background-color: #10C35B;
+        & .wrapper {
+            padding: 0 15px;
+        }
+        & .title {margin-bottom: 0;}
+    }
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 80px 0 72px;
+        @media (max-width: 992px) {
+            flex-flow: row wrap;
+            padding: 35px 0 27px;
+        }
+    }
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: calc((100% / 6) - 6.6px);
+        min-height: 160px;
+        padding: 16px 20px 14px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 8px;
+        transition: 0.3s ease;
+        @media (max-width: 1200px) {
+            min-height: 150px;
+            padding: 16px 10px 4px;
+        }
+        @media (max-width: 992px) {
+            width: calc((100% / 3) - 6.6px);
+        }
+        @media (max-width: 500px) {
+            width: calc((100% / 2) - 3.6px);
+        }
+        &:hover {box-shadow: none;}
+        &-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+            margin-bottom: 10px;
+            & img {
+                max-height: 60px;
+                max-width: 100%;
+            }
+        }
+        &-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat Bold';
+            font-size: 16px;
+            line-height: 20px;
+            min-height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            @media (max-width: 1200px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.bg {
+    &-blue {background: #2F80ED;}
+    &-violet {background: #AD5DD2;}
+    &-orange {background: #FCC125;}
+    &-blue-light {background: #2CBEFF;}
+    &-orange-dark {background: #EB5757;}
+    &-pink {background: #F594D4;}
+}

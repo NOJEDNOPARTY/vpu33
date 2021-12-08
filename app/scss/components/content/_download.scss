@@ -1,0 +1,76 @@
+.download {
+    &-year {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 40px;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 5px 20px;
+        font-family: 'Montserrat Bold';
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background-color: #10C35B;
+    }
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100px;
+        padding: 15px 78px 15px 41px;
+        background: rgba(16, 195, 91, 0.15);
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 80px;
+            padding: 15px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        & p {
+            padding-right: 10px;
+            font-family: 'Montserrat Bold';
+            font-size: 18px;
+            line-height: 20px;
+            color: #333333;
+            @media (max-width: 992px) {
+                margin-bottom: 15px;
+                padding-right: 0;
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+        &-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            @media (max-width: 992px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            & a {
+                display: block;
+                font-family: 'Montserrat Bold';
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: 0.15em;
+                text-decoration: underline;
+                color: #10C35B;
+                @media (max-width: 992px) {
+                    text-align: center;
+                }
+                &:hover {text-decoration: none;}
+                &:not(:last-child) {
+                    margin-right: 50px;
+                    @media (max-width: 992px) {
+                        margin: 0 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}

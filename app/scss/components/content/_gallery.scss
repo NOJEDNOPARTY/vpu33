@@ -1,0 +1,144 @@
+.gallery {
+    padding: 86px 0 100px;
+    @media (max-width: 992px) {
+        padding: 43px 0 50px;
+    }
+    &-slider {
+        width: 100%;
+        & .owl-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 376px;
+            min-height: 278px;
+            max-height: 278px;
+            overflow: hidden;
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba(16, 195, 91, 0.15);
+                mix-blend-mode: multiply;
+                transition: 0.3s ease;
+                opacity: 0;
+            }
+            &:hover::before {opacity: 1;}
+            & img {
+                min-width: 100%;
+                width: auto !important;
+                min-height: 278px;
+            }
+        }
+        & .owl-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;   
+            & button {
+                display: block;
+                width: 12px;
+                min-width: 12px;
+                height: 12px;
+                border: 2px solid $green;
+                border-radius: 50%;
+                background-color: transparent !important;
+                transition: 0.3s ease;
+                @media (max-width: 767px) {
+                    width: 8px;
+                    min-width: 8px;
+                    height: 8px;
+                }
+                & span {display: none;}
+                &.active {background-color: $green !important;}
+                &:not(:last-child) {
+                    margin-right: 13px;
+                    @media (max-width: 767px) {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+        & .owl-nav {
+            @media (max-width: 1200px) {
+                display: none;
+            }
+            & button {
+                position: absolute;
+                top: 50%;
+                z-index: 2;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 75px;
+                height: 75px;
+                background: $white !important;
+                border: 2px solid $green !important;
+                transition: 0.3s ease;
+                & span {
+                    display: block;
+                    font-size: 0;
+                    line-height: 0;
+                    color: transparent;
+                    width: 12px;
+                    height: 21px;
+                    background-image: url(../images/main/arrow-b.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    transition: 0.3s ease;
+    
+                }
+                &.owl-next {
+                    left: calc(100% - 21px);
+                }
+                &.owl-prev {
+                    right: calc(100% - 21px);
+                    & span {
+                        transform: rotate(180deg);
+                    }
+                }
+                &:hover {
+                    background-color: $green !important;
+                    &:hover span {
+                        background-image: url(../images/main/arrow-w.svg);
+                    }
+                }
+            }
+        }
+    }
+    &-list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 30px;
+        @media (max-width: 992px) {
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        & .gallery-slider-item {
+            margin-bottom: 50px;
+            @media (max-width: 992px) {
+                margin: 0 0 35px;
+            }
+            @media (min-width: 993px) {
+                &:not(:last-child) {margin-right: 20px;}
+            }
+        }
+    }
+}
