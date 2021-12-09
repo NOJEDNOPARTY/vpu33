@@ -37,9 +37,17 @@ var common = {
 
 		$('.menu-trigger').click(function(event){
 			event.preventDefault();
-			$(this).toggleClass('active');
-			$('.header-nav').toggleClass('active');
-			$('body').toggleClass('hidden');
+			if(!$(this).hasClass('open')){
+				$(this).addClass('open');
+				$('.header-nav').addClass('active');
+				$('body').addClass('hidden');
+			}else {
+				$(this).removeClass('open');
+				$('.header-nav').removeClass('active');
+				$('body').removeClass('hidden');
+				$('.header-nav-submenu').removeClass('active');
+				$('.header-nav-submenu:first').removeClass('active')
+			}
 		});
 
 		$('.header-nav-link-back').click(function(event){
@@ -61,6 +69,12 @@ var common = {
 			$(this).toggleClass('active');
 		});
 
+		$('.link-select .link-select-active').click(function(event){
+			event.preventDefault();
+			$(this).closest('.link-select').toggleClass('active');
+			$(this).closest('.link-select').find('.link-select-hidden').fadeToggle('fast');
+		});
+
 		// click in another place
 
 		jQuery(function($){
@@ -68,11 +82,18 @@ var common = {
 				var popup = $(".popup");
 				var popupLayout = $(".popup-layout");
 				var select = $('select');
+				let linkSelect = $(".link-select");
 				if (!popup.is(e.target) && popupLayout.is(e.target) 
 					&& popup.has(e.target).length === 0) { 
-					$('.popup-wrapper').fadeOut('fast');
+					$('.popup-wrapper').removeClass('active');
 					$('body').removeClass('hidden');
 				}
+				if (!linkSelect.is(e.target)
+					&& linkSelect.has(e.target).length === 0) {
+					linkSelect.removeClass('active');
+					linkSelect.find('.link-select-hidden').fadeOut('fast');
+				}
+
 				if (!select.is(e.target) 
 					&& select.has(e.target).length === 0) { 
 						select.removeClass('active');

@@ -1,8 +1,7 @@
 .btn {
     display: inline-block;
-    padding: 0 48px;
-    border: 2px solid $green;
-    border-radius: 30px;
+    padding: 0 55px;
+    border: 2px solid $red;
     background-color: transparent;
     transition: 0.3s ease;
     @media (max-width: 992px) {
@@ -12,23 +11,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Montserrat Bold';
-        min-height: 53px;
-        font-size: 14px;
-        line-height: 14px;    
+        font-family: 'Lato Bold';
+        font-size: 13px;
+        line-height: 53px;    
         text-align: center;
-        letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: $gray;
+        color: $blackgray;
         transition: 0.3s ease;
         @media (max-width: 992px) {
             font-size: 13px;
-            line-height: 13px;
-            min-height: 43px;
+            line-height: 43px;
         }
     }
     &:hover {
-        background-color: $green;
+        background-color: $red;
         & .btn-el {color: $white;}
     }
 }
