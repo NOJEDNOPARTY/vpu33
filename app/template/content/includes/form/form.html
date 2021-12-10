@@ -1,82 +1,97 @@
-<div class="section-block contacts">
+<div class="section-block section-block-no">
     <div class="wrapper">
-        <h3 class="title">Подати онлайн-заяву на вступ до закладу</h3>
         <div class="form">
             <div class="form-cnt">
+                <h2 class="title text-center">Подати заяву на вступ до закладу</h2>
                 <form action="#">
-                    <label class="form-row">
-                        <input class="form-field form-field-check required-field" type="text" name="name">
-                        <span>ПІБ<span>*</span></span>
-                    </label>
-                    <label class="form-row">
-                        <input class="form-field form-field-check required-field" type="text" name="date">
-                        <span>Дата народження<span>*</span></span>
-                    </label>
-                    <label class="form-row">
-                        <input class="form-field form-field-check required-field tel-trigger" type="tel" name="date">
-                        <span>Номер телефону<span>*</span></span>
-                    </label>
-                    <label class="form-row">
-                        <input class="form-field form-field-check required-field" type="email" name="date">
-                        <span>Email<span>*</span></span>
-                    </label>
-                    <label class="form-row">
-                        <input class="form-field form-field-check required-field" type="text" name="date">
-                        <span>Адреса реєстрації (дані паспорта)<span>*</span></span>
-                    </label>
-                    <label class="form-row">
-                        <input class="form-field form-field-check required-field" type="text" name="date">
-                        <span>Після якого класу ви до нас вступаєте?<span>*</span></span>
-                    </label>
-                    <div class="radio-row">
-                        <label class="radio">
-                            <input type="radio" name="class">
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title">Після 9-го класу</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="class" checked>
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title">Після 11-го класу</span>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">ПІБ*</div>
+                        <label class="form-row">
+                            <input class="form-field form-field-check required-field"  required   type="text" name="name" placeholder="ПІБ">
                         </label>
                     </div>
-
-                    <div class="info-block">
-                        <h3>Оберіть профессію</h3>
-                        <label class="radio">
-                            <input type="radio" name="work">
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title radio-title-2">Авторемонтник</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="work">
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title radio-title-2">Слюсар-електрик з ремонту електроустаткування (на автомобільному транспорті), Майстер з діагностики та налагодження електронного устаткування автомобільних засобів</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="work" checked>
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title radio-title-2">Слюсар з ремонту дорожньо-будівельних машин та тракторів, Машиніст підіймально-транспортних машин</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="work">
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title radio-title-2">Слюсар з ремонту дорожньо-будівельних машин та тракторів, Машиніст землерийно-будівельних машин</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="work">
-                            <span class="radio-icon"><span></span></span>
-                            <span class="radio-title radio-title-2">Слюсар з ремонту колісних транспортних засобів, Водій автотраспортних засобів (категорія "С")</span>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">Дата нарождення*</div>
+                        <label class="form-row">
+                            <input class="form-field form-field-check required-field"  required   type="date" name="date" placeholder="ДД/ММ/РР">
                         </label>
                     </div>
-                    <p class="form-info"><span>*</span> Поле обов’язкове для заповнення</p>
-                    <label class="checkbox">
-                        <input type="checkbox" checked>
-                        <span class="checkbox-icon"><img src="./images/main/check-2.svg" alt="check"></span>
-                        <span class="checkbox-title">Даю згоду на обробку персональних даних</span>
-                    </label>
-
-                    <button type="submit" class="btn thanks-page-trigger2"><span class="btn-el">ПОДАТИ ЗАЯВУ</span></button>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">Номер телефону*</div>
+                        <label class="form-row">
+                            <input class="form-field tel-trigger form-field-check required-field"  required   type="tel" name="tel" placeholder="+380(__) ___-__-__">
+                        </label>
+                    </div>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">E-mail*</div>
+                        <label class="form-row">
+                            <input class="form-field form-field-check required-field"  required   type="email" name="email" placeholder="email@gmail.com">
+                        </label>
+                    </div>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">Номер школи, у якій вчився (вчилася)?*</div>
+                        <label class="form-row">
+                            <input class="form-field form-field-check required-field"  required   type="text" name="school">
+                        </label>
+                    </div>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">Номер школи, у якій вчився (вчилася)?*</div>
+                        <div class="radio-row">
+                            <label class="radio">
+                                <input type="radio" name="class">
+                                <span class="radio-icon"><span></span></span>
+                                <span class="radio-title">Після 9-го класу</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="class" checked>
+                                <span class="radio-icon"><span></span></span>
+                                <span class="radio-title">Після 11-го класу</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">ПІБ батьків, та № телефону*</div>
+                        <label class="form-row">
+                            <input class="form-field form-field-check required-field"  required   type="text" name="parents">
+                        </label>
+                    </div>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">Фактичне місце проживання*</div>
+                        <label class="form-row">
+                            <input class="form-field form-field-check required-field"  required   type="text" name="living" placeholder="Адреса реєстрації (дані паспорта)">
+                        </label>
+                    </div>
+                    <div class="form-row-wrap">
+                        <div class="form-row-title">Оберіть професію*</div>
+                        <label class="form-row">
+                            <select class="form-field form-field-check required-field"  required   type="text" name="passport" placeholder="Адреса реєстрації (дані паспорта)">
+                                <option value="1">Кваліфікований робітник</option>
+                                <option value="2">Кваліфікований робітник2</option>
+                                <option value="3">Кваліфікований робітни3</option>
+                                <option value="4">Кваліфікований робітни4</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-info-wrap">
+                        <div class="form-info-item">
+                            <input type="file" multiple class="filepond" data-title="Прикріпити документ" data-text="(doc, docx, rtf, txt, odf, pdf)">
+                        </div>
+                    </div>
+                    <div class="form-info-wrap">
+                        <p class="form-info"><span>*</span> Поле обов’язкове для заповнення</p>
+                    </div>
+                    <div class="form-info-wrap">
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-icon"><img src="./images/main/check-2.svg" alt="check"></span>
+                            <span class="checkbox-title">Даю згоду на обробку персональних даних</span>
+                        </label>
+                    </div>
+                    <div class="form-info-wrap">
+                        <div class="form-info-item">
+                            <button type="submit" class="btn submit-btn"><span class="btn-el">ПОДАТИ ЗАЯВКУ НА ВСТУПУ ДО ЗАКЛАДУ</span></button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

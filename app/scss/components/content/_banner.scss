@@ -1,96 +1,200 @@
 .banner {
-    width: 100%;
     &-item {
         width: 100%;
-        min-height: 610px;
-        padding: 119px 0 89px;
+        min-height: 570px;
+        padding: 77px 0;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top right;
         background-size: cover;
-        @media (max-width: 992px) {
-            padding: 25px 0 32px;
-            min-height: 285px;
+        @media (max-width: 1700px) {
+            background-position: top right -200px;
+        }
+        @media (max-width: 1400px) {
+            background-position: top right -450px;
+        }
+        @media (max-width: 1200px) {
+            padding: 125px 0;
+            min-height: 0;
+            background-position: top right -190px;
+        }
+        @media (max-width: 945px) {
+            background-position: top right -566px;
+        }
+        @media (max-width: 767px) {
+            padding: 0 0 20px;
+            background: none !important;
         }
         &-title {
-            margin-bottom: 102px;
-            font-family: 'Montserrat Bold';
-            font-size: 39px;
-            line-height: 60px;
-            text-align: center;
+            max-width: 588px;
+            font-family: 'Lato Black';
+            font-size: 64px;
+            line-height: 82px;
             text-transform: uppercase;
-            color: $white;
-            @media (max-width: 992px) {
-                margin-bottom: 25px;
-                font-size: 16px;
-                line-height: 25px;
+            color: #2E2E3A;
+            @media (max-width: 1200px) {
+                font-size: 48px;
+                line-height: 56px;
                 width: 100%;
-                max-width: 360px;
-                margin: 0 auto 25px;
+                max-width: 400px;
                 & br {
                     display: none;
                 }
             }
-        }
-        &-subtitle {
-            font-family: 'Montserrat SemiBold';
-            font-size: 18px;
-            line-height: 30px;
-            text-align: center;
-            text-transform: uppercase;
-            color: $white;
-            @media (max-width: 992px) {
-                font-size: 13px;
-                line-height: 20px;
+            @media (max-width: 767px) {
+                font-size: 30px;
+                line-height: 38px;
                 width: 100%;
-                max-width: 360px;
-                margin: 0 auto;
-                & br {
-                    display: none;
+                max-width: 277px;
+            }
+            & span {
+                color: $red;
+            }
+            &:not(:last-child) {
+                margin-bottom: 21px;
+                @media (max-width: 1200px) {
+                    margin-bottom: 16px;
                 }
+                @media (max-width: 767px) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &-p {
+            font-family: 'Lato Medium';
+            font-size: 17px;
+            line-height: 24px;
+            color: #2E2E3A;
+            @media (max-width: 1200px) {
+                font-size: 17px;
+                line-height: 24px;
+            }
+            &:not(:last-child) {
+                margin-bottom: 10px;
+                @media (max-width: 1200px) {
+                    margin-bottom: 8px;
+                }
+                @media (max-width: 767px) {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+        &-pos {
+            & p {
+                max-width: 472px;
+                font-family: 'Lato Bold';
+                font-size: 24px;
+                line-height: 29px;
+                color: #2E2E3A;
+                @media (max-width: 1200px) {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+
+            }
+        }
+        &-mobile {
+            display: none !important;
+            @media (max-width: 500px) {
+                position: relative;
+                display: block !important;
+                width: 100%;
+                max-height: 186px;
+                margin-bottom: 10px;
+                &::before {
+                    content: '';
+                    display: block;
+                    padding-top: 59%;
+                }
+                & img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }  
+        }
+        &-tablet {
+            display: none !important;
+            @media (max-width: 767px) {
+                position: relative;
+                display: block !important;
+                width: 100%;
+                max-height: 186px;
+                margin-bottom: 10px;
+                &::before {
+                    content: '';
+                    display: block;
+                    padding-top: 30%;
+                }
+                & img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+            @media (max-width: 500px) {
+                display: none !important;
             }
         }
     }
     &-slider {
+        width: 100%;
+        background: #C8D8E5;
         & .owl-dots {
             position: absolute;
-            bottom: 56px;
+            bottom: 27px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             align-items: center;
             justify-content: center;     
-            @media (max-width: 992px) {
-                bottom: -20px;
+            @media (max-width: 767px) {
+                display: none;
             }   
             & button {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 12px;
                 min-width: 12px;
                 height: 12px;
-                border: 2px solid $green;
+                border: 3px solid transparent;
                 border-radius: 50%;
                 background-color: transparent !important;
                 transition: 0.3s ease;
-                @media (max-width: 767px) {
-                    width: 8px;
-                    min-width: 8px;
-                    height: 8px;
+                & span {
+                    display: block;
+                    width: 9px;
+                    min-width: 9px;
+                    height: 9px;
+                    border: 3px solid $white;
+                    border-radius: 50%;
+                    transition: 0.3s ease;
                 }
-                & span {display: none;}
-                &.active,
-                &:hover {background-color: $green !important;}
-                &:not(:last-child) {
-                    margin-right: 25px;
-                    @media (max-width: 767px) {
-                        margin-right: 15px;
+                &.active {            
+                    background-color: $red !important;
+                    border: 3px solid $white;
+                    & span {
+                        border: 3px solid transparent;
                     }
+                }
+                &:not(:last-child) {
+                    margin-right: 13px;
                 }
             }
         }
         & .owl-nav {
-            @media (max-width: 1200px) {
-                display: none;
-            }
             & button {
                 position: absolute;
                 top: 50%;
@@ -99,34 +203,47 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 75px;
-                height: 75px;
-                background: rgba(51, 51, 51, 0.5) !important;
-                transition: 0.3s ease;
-                &:hover {background: rgba(51, 51, 51, 1) !important;}
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3) !important;
+                transition: 0.3s ease;  
+                @media (max-width: 1680px) {
+                    width: 29px;
+                    height: 29px;
+                }  
+                @media (max-width: 767px) {
+                    top: 73px;
+                    transform: none;
+                }  
+                &:hover {background: rgba(255, 255, 255, 1) !important;}
                 & span {
                     display: block;
                     font-size: 0;
                     line-height: 0;
                     color: transparent;
-                    width: 12px;
-                    height: 21px;
-                    background-image: url('../images/main/arrow-w.svg');
+                    width: 10px;
+                    height: 18px;
+                    background-image: url('../images/main/arrow-wwwww.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
+                    @media (max-width: 1680px) {
+                        width: 7px;
+                        height: 11px;
+                    }  
                 }
                 &.owl-next {
-                    right: 59px;
-                    @media (max-width: 1400px) {
-                        right: 0;
-                    }
+                    right: 52px;
+                    @media (max-width: 1680px) {
+                        right: 6px;
+                    }  
                 }
                 &.owl-prev {
-                    left: 59px;
-                    @media (max-width: 1400px) {
-                        left: 0;
-                    }
+                    left: 52px;
+                    @media (max-width: 1680px) {
+                        left: 6px;
+                    }  
                     & span {transform: rotate(180deg);}
                 }
             }

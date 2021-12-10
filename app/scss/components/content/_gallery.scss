@@ -1,10 +1,16 @@
 .gallery {
-    padding: 86px 0 100px;
+    padding: 70px 0 0;
     @media (max-width: 992px) {
-        padding: 43px 0 50px;
+        padding: 30px 0 0;
     }
     &-slider {
         width: 100%;
+        max-width: 1654px;
+        margin: 0 auto;
+        padding: 0 107px;
+        @media (max-width: 1200px) {
+            padding: 0 20px;
+        }
         & .owl-item {
             display: flex;
             align-items: center;
@@ -12,18 +18,24 @@
         }
         &-item {
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
             width: 100%;
-            max-width: 376px;
-            min-height: 278px;
-            max-height: 278px;
             overflow: hidden;
             &::before {
+                content: "";
+                display: block;
+            }
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:after {
                 content: '';
                 position: absolute;
-                z-index: 2;
                 top: 0;
                 left: 0;
                 right: 0;
@@ -31,51 +43,50 @@
                 display: block;
                 width: 100%;
                 height: 100%;
-                background: rgba(16, 195, 91, 0.15);
-                mix-blend-mode: multiply;
+                background: rgba(206, 30, 46, 0.3);
                 transition: 0.3s ease;
                 opacity: 0;
+                visibility: hidden;
             }
-            &:hover::before {opacity: 1;}
-            & img {
-                min-width: 100%;
-                width: auto !important;
-                min-height: 278px;
+            &:hover:after {
+                opacity: 1;
+                visibility: visible;
             }
-        }
-        & .owl-dots {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 12px;   
-            & button {
-                display: block;
-                width: 12px;
-                min-width: 12px;
-                height: 12px;
-                border: 2px solid $green;
-                border-radius: 50%;
-                background-color: transparent !important;
-                transition: 0.3s ease;
-                @media (max-width: 767px) {
-                    width: 8px;
-                    min-width: 8px;
-                    height: 8px;
+            &-s {
+                min-height: 126px;
+                max-height: 126px;
+                @media (max-width: 767px)  {
+                    min-height: 70px;
+                    max-height: 70px;
+                    &::before {
+                        padding-top: 59%;
+                    }
                 }
-                & span {display: none;}
-                &.active {background-color: $green !important;}
-                &:not(:last-child) {
-                    margin-right: 13px;
-                    @media (max-width: 767px) {
-                        margin-right: 15px;
+            }
+            &-m {
+                min-height: 280px;
+                max-height: 280px;
+                @media (max-width: 767px)  {
+                    min-height: 170px;
+                    max-height: 170px;
+                    &::before {
+                        padding-top: 61%;
+                    }
+                }
+            }
+            &-l {
+                min-height: 350px;
+                max-height: 350px;
+                @media (max-width: 767px)  {
+                    min-height: 190px;
+                    max-height: 190px;
+                    &::before {
+                        padding-top: 77%;
                     }
                 }
             }
         }
         & .owl-nav {
-            @media (max-width: 1200px) {
-                display: none;
-            }
             & button {
                 position: absolute;
                 top: 50%;
@@ -84,60 +95,49 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 75px;
-                height: 75px;
+                width: 70px;
+                height: 70px;
                 background: $white !important;
-                border: 2px solid $green !important;
+                border: 2px solid transparent !important;
+                border-radius: 50%;
                 transition: 0.3s ease;
+                @media (max-width: 1200px) {
+                    width: 29px;
+                    height: 29px;
+                    background: rgba(255, 255, 255, 0.3) !important;
+                }
                 & span {
                     display: block;
                     font-size: 0;
                     line-height: 0;
                     color: transparent;
-                    width: 12px;
-                    height: 21px;
-                    background-image: url(../images/main/arrow-b.svg);
+                    width: 10px;
+                    height: 18px;
+                    background-image: url(../images/main/arrow-b3.svg);
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
                     transition: 0.3s ease;
+                    @media (max-width: 1200px) {
+                        width: 7px;
+                        height: 12px;
+                    }
     
                 }
                 &.owl-next {
-                    left: calc(100% - 21px);
+                    left: 7px;
                 }
                 &.owl-prev {
-                    right: calc(100% - 21px);
+                    right: 7px;
                     & span {
                         transform: rotate(180deg);
                     }
                 }
                 &:hover {
-                    background-color: $green !important;
-                    &:hover span {
-                        background-image: url(../images/main/arrow-w.svg);
+                    @media (min-width: 1201px) {
+                        border: 2px solid $red !important;
                     }
                 }
-            }
-        }
-    }
-    &-list {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-top: 30px;
-        @media (max-width: 992px) {
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
-        }
-        & .gallery-slider-item {
-            margin-bottom: 50px;
-            @media (max-width: 992px) {
-                margin: 0 0 35px;
-            }
-            @media (min-width: 993px) {
-                &:not(:last-child) {margin-right: 20px;}
             }
         }
     }

@@ -1,11 +1,12 @@
 var common = {
 	init: function() {
-		common.fixNavigation();
+		common.navigationFixation();
+		common.wow();
 		common.main();
 		common.carousel();
 		common.submit();
 	},
-	fixNavigation: function(){
+	navigationFixation: function(){
 		function fixPanel() {
 			$('body').css({'padding-top': $('.header').outerHeight()})
 			if($(window).scrollTop() > 0){
@@ -30,6 +31,19 @@ var common = {
 		$( ".header-nav-submenu-hover" ).mouseleave(function() {
 			$(this).parent('.header-nav-submenu').removeClass('link-in');
 		});
+	},
+	wow: function() {
+		let wow = new WOW({
+			boxClass:     'wow',      // animated element css class (default is wow)
+			animateClass: 'animate__animated', // animation css class (default is animated)
+			offset:       0,          // distance to the element when triggering the animation (default is 0)
+			mobile:       true,       // trigger animations on mobile devices (default is true)
+			live:         true,       // act on asynchronously loaded content (default is true)
+			callback:     function(box) {},
+			scrollContainer: null,    // optional scroll container selector, otherwise use window,
+			resetAnimation: true,     // reset animation on end (default is true)
+		});
+		wow.init();
 	},
 	main: function(){
 
@@ -63,7 +77,16 @@ var common = {
 
 		// b-lazy
 
-		var bLazy = new Blazy({});
+		var bLazy = new Blazy({ 
+			breakpoints: [{
+				width: 767, 
+				src: 'data-src-small'
+			}, 
+			{
+				width: 4000, src: 'data-src-medium'
+			}]
+		});
+
 
 		$('.form-row select').click(function(){
 			$(this).toggleClass('active');
@@ -117,6 +140,22 @@ var common = {
 			$('body').removeClass('hidden');
 		});
 
+		let fileTitle = $('.filepond').attr('data-title')
+		let fileText = $('.filepond').attr('data-text')
+
+		FilePond.registerPlugin(
+			FilePondPluginFileValidateType
+		);
+		
+		// Select the file input and use 
+		// create() to turn it into a pond
+		FilePond.create(
+			document.querySelector('.filepond'),
+			{
+				labelIdle: `${fileTitle} <span class="filepond--label-action">${fileText}</span>`,
+			}
+		);
+
 		// phone mask
 		$('.tel-trigger').mask("+380(99) 999-99-99");
 
@@ -134,9 +173,10 @@ var common = {
 			nav: true,
 			dots: true,
 			autoHeight: true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
 			autoplay:true,
-			autoplayTimeout:3000,
-			autoplayHoverPause:true
+			autoplayTimeout: 4000
 		});
 
 		$('.statute-slider').owlCarousel({
@@ -150,26 +190,54 @@ var common = {
 			// animateIn: 'fadeIn'
 		});
 
-		$('.gallery-slider').owlCarousel({
+		$('.gallery-slider-6').owlCarousel({
+			loop:true,
+			items:6,
+			margin:30,
+			nav:true,
+			dots: false,
+			responsive:{
+				0:{
+					items:2,
+					margin:15
+				},
+				550:{
+					items:3,
+					margin:15
+				},
+				768:{
+					items:3
+				},
+				1050:{
+					items:4
+				},
+				1250:{
+					items:5
+				},
+				1550:{
+					items:6
+				}
+			}
+		});
+
+		$('.gallery-slider-3').owlCarousel({
 			loop:true,
 			items:3,
-			margin:20,
+			margin:30,
 			nav:true,
 			dots: false,
 			responsive:{
 				0:{
 					items:1,
-					margin:20,
-					dots: true
+					margin:20
 				},
-				767:{
+				600:{
 					items:2,
-					margin:20,
-					dots: true
+					margin:20
 				},
 				1000:{
 					items:3,
-					margin:20,
+					margin:30,
 				}
 			}
 		});
@@ -205,43 +273,15 @@ var common = {
 		
 	},
 	submit: function(){
-		$("form").submit(function(event){
-			event.preventDefault();
-			formField = $(this).find(".required-field")
-			thanksTrigger1 = $(this).find('.thanks-page-trigger1');
-			thanksTrigger2 = $(this).find('.thanks-page-trigger2');
-			
-			formField.each(function(){
-				var thisEl = $(this);
-				if (! thisEl.val().length) {
-					thisEl.addClass('error')
-					setTimeout(function(){
-						thisEl.removeClass('error')
-					}, 3000)
-					thisEl.addClass('form-error')
-				}else { thisEl.removeClass('form-error')}
-			});	
-			if(formField.hasClass('form-error') == false){
-				if(thanksTrigger1.hasClass('thanks-page-trigger1')) {
-					$('.popup-wrapper').removeClass('active');
-					$('#thanks1').addClass('active');
-					$('body').addClass('hidden');
-					var bLazy = new Blazy({});
-				}
-				if(thanksTrigger2.hasClass('thanks-page-trigger2')) {
-					$('.popup-wrapper').removeClass('active');
-					$('#thanks2').addClass('active');
-					$('body').addClass('hidden');
-					var bLazy = new Blazy({});
-				}
-			}
-		});
-		$('.form-row .form-field').keyup(function(){
-			if($(this).val() == '') {
-				$(this).closest('.form-row').removeClass('active')
-			}else {
-				$(this).closest('.form-row').addClass('active')
-			}
+		let formSubmitButton = document.querySelectorAll('.submit-btn');
+
+		formSubmitButton.forEach(function (button) {
+			button.addEventListener("click", function (e) {
+				let inputItems = button.closest('form').querySelectorAll('[required]');
+				inputItems.forEach((item) => {
+					item.classList.add('was-validate');
+				});
+			});
 		});
 
 		
