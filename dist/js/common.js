@@ -3,6 +3,7 @@ var common = {
 		common.navigationFixation();
 		common.wow();
 		common.main();
+		common.accordion();
 		common.carousel();
 		common.submit();
 	},
@@ -162,6 +163,36 @@ var common = {
 		
 
 	},
+	accordion: function(){
+		$(document).on('click', '.accordion__trigger', function(event){
+			event.preventDefault();
+		
+			let accordionItem = $(this).closest('.accordion');
+			if(accordionItem.hasClass('open') == false) {
+				accordionItem.addClass('open');
+				accordionItem.find('.accordion-content').slideToggle('fast');
+			}else {
+				accordionItem.removeClass('open');
+				accordionItem.find('.accordion-content').slideToggle('fast');
+			}
+		});
+
+		$(document).on('click', '.cldnr-head', function(event){
+			if($(window).width() < 993){
+				event.preventDefault();
+			
+				let cldnrItem = $(this).closest('.cldnr');
+				if(cldnrItem.hasClass('open') == false) {
+					cldnrItem.addClass('open');
+					cldnrItem.find('.cldnr-content').slideToggle('fast');
+				}else {
+					cldnrItem.removeClass('open');
+					cldnrItem.find('.cldnr-content').slideToggle('fast');
+				}
+			}
+		});
+		
+	},
 	carousel: function(){
 		var bannerSlider = $('.banner-slider');
 
@@ -241,6 +272,71 @@ var common = {
 				}
 			}
 		});
+
+		let cardsSlider = $('.cards-slider');
+		let newsPrevSlider = $('.news-prev-slider');
+
+		function cardsSliderInit(){
+			cardsSlider.owlCarousel({
+				loop:true,
+				items: 1,
+				autoHeight: true,
+				margin: 0,
+				nav: false,
+				dots: true
+			});
+			newsPrevSlider.owlCarousel({
+				loop:true,
+				items: 1,
+				autoHeight: true,
+				margin: 0,
+				nav: true,
+				dots: true,
+				0:{
+					items:1,
+					margin:0
+				},
+				600:{
+					items:2,
+					margin:20
+				}
+			});
+		}
+
+		$(window).scroll(function() {
+			$(window).width() < 768 ? cardsSliderInit() : (cardsSlider.trigger('destroy.owl.carousel'), newsPrevSlider.trigger('destroy.owl.carousel'));
+		});
+		$( window ).resize(function() {
+			$(window).width() < 768 ? cardsSliderInit() : (cardsSlider.trigger('destroy.owl.carousel'), newsPrevSlider.trigger('destroy.owl.carousel'));
+		});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		$('.news-slider').owlCarousel({
 			loop:true,

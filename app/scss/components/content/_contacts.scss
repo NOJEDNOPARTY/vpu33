@@ -1,3 +1,174 @@
 .contacts {
-    
+    &-row {
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &:not(:last-child) {
+            margin-bottom: 70px;
+            @media (max-width: 992px) {
+                margin-bottom: 30px;
+            }
+        }
+        &-item {
+            width: calc(50% - 15px);
+            @media (max-width: 992px) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &-map {
+        & .map,
+        & .map iframe {
+            width: 100%;
+            min-height: 426px;
+            @media (max-width: 992px) {
+                min-height: 226px;
+            }
+        }
+    }
+    &-r {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @media (max-width: 670px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &:not(:last-child) {
+            margin-bottom: 35px;
+            @media (max-width: 670px) {
+                margin-bottom: 20px;
+            }
+        }
+        &-left {
+            width: 100%;
+            max-width: 368px;
+            padding-right: 10px;
+            @media (max-width: 670px) {
+                max-width: 100%;
+                margin-bottom: 5px;
+                padding-right: 0;
+            }
+        }
+        &-right {
+            width: 100%;
+            max-width: 339px;
+            font-family: 'Lato Regular';
+            font-size: 16px;
+            line-height: 24px;
+            color: #656575;
+            @media (max-width: 670px) {
+                max-width: 100%;
+            }
+            & > a {
+                display: block;
+                font-family: 'Lato Medium';
+                font-size: 17px;
+                line-height: 24px;
+                letter-spacing: -0.009em;
+                color: #656575;
+                transition: 0.3s ease;
+                &:hover {color: $red;}
+            }
+        }
+        & p {
+            font-family: 'Lato Medium';
+            font-size: 17px;
+            line-height: 24px;
+            letter-spacing: -0.009em;
+            color: #2E2E3A;
+        }
+    }
+    &-social {
+        & .title-s {
+            margin-bottom: 0;
+            @media (max-width: 670px) {
+                margin-bottom: 15px;
+            }
+        }
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            & a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 47px;
+                min-width: 47px;
+                height: 47px;
+                background: #CE1E2E;
+                box-shadow: 0px 7px 4px rgba(255, 0, 1, 0.2);
+                border-radius: 20px;
+                transition: 0.3s ease;
+                &:hover {box-shadow: none;}
+                &:not(:last-child) {
+                    margin-right: 30px;
+                }
+                & img {
+                    max-width: 75%;
+                }
+            }
+        }
+    }
+    &-form {
+        width: 100%;
+        padding: 70px 123px 121px;
+        background-color: $white;
+        @media (max-width: 1200px) {
+            padding: 30px 20px;
+        }
+        & form {
+            width: 100%;
+        }
+        &-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            @media (max-width: 992px) {
+                flex-direction:column;
+                align-items: center;
+                & .form-row {max-width: 100%;}
+            }
+            & .form-row-wrap-column:not(:last-child) {margin-bottom: 26px;}
+        }
+        &-column {
+            width: calc(50% - 15px);
+            @media (max-width: 992px) {
+                width: 100%;
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+            & .form-info-wrap {
+                width: 100%;
+                max-width: 100%;
+                & .form-info {
+                    max-width: 100%;
+                    margin: -4px 0 12px;
+                }
+                & .checkbox {
+                    max-width: 100%;
+                    margin: 0 0 16px;
+                }
+                & .form-info-item {
+                    max-width: 100%;
+                }
+                & .btn {
+                    width: 100%;
+                    max-width: 100%;
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
 }
+
+
+
+
