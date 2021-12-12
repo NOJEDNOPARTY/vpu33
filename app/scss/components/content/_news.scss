@@ -389,6 +389,136 @@
             }
         }
     }
+    &-main {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        &-item {
+            display: block;
+            width: calc((100% / 3) - 20px);
+            margin: 0 0 30px;
+            border-radius: 0 0 8px 8px;
+            transition: 0.3s ease;
+            @media (max-width: 1200px) {
+                width: calc((100% / 2) - 15px);
+            }
+            @media (max-width: 600px) {
+                width: 100%;
+            }
+            &:hover {
+                @media (min-width: 1201px) {
+                    background: #FFFFFF;
+                    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                }
+            }
+            &-img {
+                position: relative;
+                display: block;
+                width: 100%;
+                min-height: 350px;
+                max-height: 350px;
+                overflow: hidden;
+                @media (max-width: 1200px) {
+                    min-height: 250px;
+                    max-height: 250px;
+                }
+                @media (max-width: 600px) {
+                    min-height: 160px;
+                    max-height: 160px;
+                }
+                &::before {
+                    content: "";
+                    display: block;
+                    padding-top: 77%;
+                }
+                & img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(206, 30, 46, 0.3);
+                    transition: 0.3s ease;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                &:hover:after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            &-cnt {
+                padding: 20px 20px 13px;
+                @media (max-width: 992px) {
+                    padding: 15px 0;
+                }
+            }
+            &-title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 5px;
+                & span {
+                    font-family: 'Lato Bold';
+                    font-size: 24px;
+                    line-height: 29px;
+                    color: #2E2E3A;
+                    transition: 0.3s ease;
+                    @media (max-width: 992px) {
+                        font-size: 18px;
+                        line-height: 20px;
+                    }
+                    &:hover {
+                        color: $red;
+                    }
+                }
+                & img {
+                    display: block;
+                    width: 13px;
+                    min-width: 13px;
+                    margin-left: 13px;
+                    @media (max-width: 992px) {
+                        margin-left: 5px;
+                    }
+                }
+            }
+            &-date {
+                margin-bottom: 5px;
+                font-family: 'Lato Black';
+                font-size: 12px;
+                line-height: 24px;
+                letter-spacing: 0.1em;
+                color: #2E2E3A;
+                @media (max-width: 992px) {
+                    font-size: 10px;
+                    line-height: 18px;
+                }
+            }
+            & p {
+                font-family: 'Lato Regular';
+                font-size: 16px;
+                line-height: 24px;
+                color: #656575;
+                @media (max-width: 992px) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
 }
 
 .preview {

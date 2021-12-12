@@ -1,0 +1,56 @@
+.graduates {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-flow: row wrap; }
+  .graduates-item {
+    display: block;
+    width: calc((100% / 3) - 20px);
+    margin: 0 0 30px; }
+    @media (max-width: 992px) {
+      .graduates-item {
+        width: calc((100% / 2) - 20px);
+        margin: 0 0 20px; } }
+    @media (max-width: 550px) {
+      .graduates-item {
+        width: 100%; } }
+    .graduates-item-img {
+      position: relative;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      max-height: 350px;
+      margin-bottom: 20px; }
+      .graduates-item-img::before {
+        content: "";
+        display: block;
+        padding-top: 77%; }
+      .graduates-item-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center; }
+    .graduates-item-title {
+      margin-bottom: 10px;
+      font-family: 'Lato Bold';
+      font-size: 24px;
+      line-height: 29px;
+      color: #2E2E3A; }
+      @media (max-width: 992px) {
+        .graduates-item-title {
+          font-size: 18px;
+          line-height: 22px; } }
+    .graduates-item-text {
+      font-family: 'Lato Regular';
+      font-size: 16px;
+      line-height: 24px;
+      color: #656575; }
+      @media (max-width: 992px) {
+        .graduates-item-text {
+          font-size: 14px;
+          line-height: 20px; } }
+
+/*# sourceMappingURL=../../maps/components/content/graduates.css.map */

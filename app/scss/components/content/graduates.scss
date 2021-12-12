@@ -1,0 +1,61 @@
+.graduates {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    &-item  {
+        display: block;
+        width: calc((100% / 3) - 20px);
+        margin: 0 0 30px;
+        @media (max-width: 992px) {
+            width: calc((100% / 2) - 20px);
+            margin: 0 0 20px;
+        }
+        @media (max-width: 550px) {
+            width: 100%;
+        }
+        &-img {
+            position: relative;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            max-height: 350px;
+            margin-bottom: 20px;
+            &::before {
+                content: "";
+                display: block;
+                padding-top: 77%;
+            }
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+        &-title {
+            margin-bottom: 10px;
+            font-family: 'Lato Bold';
+            font-size: 24px;
+            line-height: 29px;
+            color: #2E2E3A;
+            @media (max-width: 992px) {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+        &-text {
+            font-family: 'Lato Regular';
+            font-size: 16px;
+            line-height: 24px;
+            color: #656575;
+            @media (max-width: 992px) {
+                font-size: 14px;
+                line-height: 20px;  
+            }
+        }
+    }
+}
